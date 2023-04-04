@@ -1,21 +1,27 @@
 #include "lists.h"
 
 /**
- *  listint_len - Returns the number of elements
+ * add_nodeint - Adds a new node at the beginning
  *
- *  @h: struct
+ * @head: struct
  *
- *  Return:size_t
+ * @n: const int
+ *
+ * Return: listint_t
  */
 
-size_t listint_len(const listint_t *h)
+listint_t *add_nodeint(listint_t **head, const int n)
 {
-	unsigned int index = 0;
+	listint_t *new_node;
 
-	while (h != NULL)
+	new_node = malloc(sizeof(listint_t));
+
+	if (new_node == NULL)
 	{
-		h = h->next;
-		index++;
+		return (NULL);
 	}
-	return (index);
+	new_node->n = n;
+	new_node->next = *head;
+	*head = new_node;
+	return (*head);
 }
