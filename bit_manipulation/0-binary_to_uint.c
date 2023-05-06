@@ -10,19 +10,29 @@
 
 unsigned int binary_to_uint(const char *a)
 {
-	int j;
-	unsigned int dec_val = 0;
+	unsigned int ui;
+	int len, base_two;
 
 	if (!a)
 		return (0);
 
-	for (j = 0; a[j]; j++)
+	ui = 0;
+
+	for (len = 0; a[len] != '\0'; len++)
+		;
+
+	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
 	{
-		if (a[j] < '0' || a[j] > '1')
+		if (a[len] != '0' && a[len] != '1')
+		{
 			return (0);
-		dec_val = 2 * dec_val + (a[j] - '0');
+		}
+
+		if (a[len] & 1)
+		{
+			ui += base_two;
+		}
 	}
 
-	return (dec_val);
+	return (ui);
 }
-
