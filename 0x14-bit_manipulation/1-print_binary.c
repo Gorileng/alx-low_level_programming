@@ -2,17 +2,17 @@
 
 /**
  * print_binary - The binary of a dec number will be printed
- * @n: Binary number to print
+ * @p: Binary number to print
  */
-void print_binary(unsigned long int n)
+void print_binary(unsigned long int p)
 {
 
-	if (n > 1)
+	if (p > 1)
 	{
-	print_binary(n >> 1);
+	print_binary(p >> 1);
 	}
 
-	if (n & 1)
+	if (p & 1)
 	{
 		_putchar('1');
 	}
