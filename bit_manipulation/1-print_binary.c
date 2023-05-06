@@ -1,26 +1,23 @@
+
 #include "main.h"
 
 /**
- * print_binary - The binary of a dec number will be printed
- * @n: Binary number to print
+ * get_bit - it will return the value of a bit
+ * @z: the number will search
+ * @index: the index of bit
+ *
+ * Return: the value of thee bit
  */
-
-void print_binary(unsigned long int n)
+int get_bit(unsigned long int z, unsigned int index)
 {
+	int bit_val;
 
-	if (n > 1)
-	{
-	print_binary(n >> 1);
-	}
+	if (index > 63)
+		return (-1);
 
-	if (n & 1)
-	{
-		_putchar('1');
-	}
-	else
-	{
-		_putchar('0');
-	}
+	bit_val = (z >> index) & 1;
 
-
+	return (bit_val);
 }
+
+
