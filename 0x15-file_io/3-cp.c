@@ -2,18 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
+
+
+
 
 char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
  * create_buffer - 1024 will be allocated bytes for a buffer.
- * @file: the file buffer is storing characters for.
+ * @file: The file buffer is storing characters for.
  *
- * Return: pointer to allocated the new buffer.
+ * Return: Pointer to be allocated to the new buffer.
  */
 char *create_buffer(char *file)
 {
@@ -32,8 +32,8 @@ char *create_buffer(char *file)
 }
 
 /**
- * close_file - it will close file descriptors.
- * @fd: file descriptor to  close.
+ * close_file - It will close file descriptors.
+ * @fd: A file descriptor to  close.
  */
 void close_file(int fd)
 {
@@ -51,7 +51,7 @@ void close_file(int fd)
 /**
  * main - Copy the contents of the file to the other file.
  * @argc: number of arguments will be supplied to the program.
- * @argv: array of pointers to the arguments.
+ * @argv: array of pointers to arguments.
  *
  * Return: 0 on success.
  *
